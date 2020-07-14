@@ -2,7 +2,7 @@
 int main(){
     float num1, num2, aux, cont=0;
     char operador;
-    printf("Informe a operacao:");
+    printf("Caso queira sair, digite c0\nInforme a operacao:\n");
     do{
         if(cont==0){
             fflush(stdin);
