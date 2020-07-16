@@ -81,73 +81,92 @@ int main(){
             break;
         }
         case 7:{
+            
+            int x,y,parada,divisor,i;
+
+            scanf("%d %d", &x, &y);
+
+            if(x>=y){
+                parada = y;
+            }else{
+                parada = x;
+            }
+
+            for(i=1; i<=parada; i++){
+                if(x%i == 0 && y%i== 0){
+                    divisor = i;
+                }
+            }
+            printf("%d", divisor);
+            
             break;
         }
+        
         case 8:{
+           
             float num1, num2, aux, cont=0;
-                char operador;
-                printf("Caso queira sair, digite c0\nInforme a operacao:(exemplo: 1+1)\n");
-                do{
-                    if(cont==0){
-                        fflush(stdin);
+            char operador;
+            printf("Caso queira sair, digite c0\nInforme a operacao:(exemplo: 1+1)\n");
+            do{
+                if(cont==0){                        fflush(stdin);
                         scanf("%f %c %f", &num1, &operador, &num2);
                     }else{
-                        fflush(stdin);
-                        scanf("%c %f", &operador, &num2);
+                    fflush(stdin);
+                    scanf("%c %f", &operador, &num2);
+                }
+
+                switch (operador){
+                
+                    case '+':{
+                    
+                        if(cont == 0)
+                            aux = num1 + num2;
+                        else
+                            aux += num2;
+                    
+                        break;
+                    }
+                        
+                    case '-':{
+                        if(cont == 0)
+                            aux = num1 - num2;
+                        else
+                            aux -= num2;
+                        break;
+                    }
+                        
+                    case '/':{
+                            
+                        if(num2 == 0){
+                            printf("Erro, nao e possivel fazer divisao com 0.\n");
+                            break;
+                        }
+                        
+                        if(cont == 0)
+                        aux = num1 / num2;
+                        else
+                            aux = aux / num2;
+                        
+                        break;
                     }
 
-                    
-                    
-                    switch (operador){
-                    
-                        case '+':{
-                        
-                            if(cont == 0)
-                                aux = num1 + num2;
-                            else
-                                aux += num2;
-                        
-                            break;
-                        }
-                        
-                        case '-':{
-                            if(cont == 0)
-                                aux = num1 - num2;
-                            else
-                                aux -= num2;
-                            break;
-                        }
-                        
-                        case '/':{
+                    case '*':{
                             
-                            if(num2 == 0){
-                                printf("Erro, nao e possivel fazer divisao com 0.\n");
-                                break;
-                            }
-                            
-                            if(cont == 0)
-                                aux = num1 / num2;
-                            else
-                                aux = aux / num2;
-                            
-                            break;
-                        }
+                        if(cont == 0)
+                            aux = num1 * num2;
+                        else
+                            aux *= num2;
 
-                        case '*':{
-                            
-                            if(cont == 0)
-                                aux = num1 * num2;
-                            else
-                                aux *= num2;
-
-                            break;
-                        }
+                        break;
                     }
-                    cont = 1;
-                    printf("%.2f", aux);
-                }while(operador != 'c');
+                }
+                cont = 1;
+                printf("%.2f", aux);
+            }while(operador != 'c');
+    
             break;
         }
+    
         case 9:{
                 int dia1, mes1, ano1;
                 int dia2, mes2, ano2;
