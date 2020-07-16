@@ -212,6 +212,87 @@ int main(){
             break;
         }
         case 10:{
+            	int decimal;
+                printf("Informe o numero a ser convertido:\n");
+                scanf("%d", &decimal);
+                do{
+                    if(decimal-1000 >= 0){
+                    printf("M");
+                    decimal = decimal - 1000;
+                    
+                    }else{
+                        if(decimal-900 >= 0){
+                        printf("CM");
+                        decimal = decimal - 900;
+                            
+                        }else{
+                            if(decimal-500 >= 0){
+                            printf("D");
+                            decimal = decimal - 500;
+                            
+                            }else{
+                                if(decimal-400 >= 0){
+                                printf("CD");
+                                decimal = decimal - 400;
+                                    
+                                    }else{
+                                        if(decimal-100 >= 0){
+                                        printf("C");
+                                        decimal = decimal - 100;
+                                        
+                                        }else{
+                                            if(decimal-90 >= 0){
+                                            printf("XC");
+                                            decimal = decimal - 90;
+                                            
+                                            }else{
+                                                if(decimal-50 >= 0){
+                                                printf("L");
+                                                decimal = decimal - 50;
+                                            
+                                                }else{
+                                                    if(decimal-40 >= 0){
+                                                    printf("XL");                                                    decimal = decimal - 40;
+                                                
+                                                    }else{
+                                                        if(decimal-10 >= 0){
+                                                        printf("X");
+                                                        decimal = decimal - 10;
+                                                    
+                                                        }else{
+                                                            if(decimal-9 >= 0){
+                                                            printf("IX");
+                                                            decimal = decimal - 9;
+                                                        
+                                                        }else{
+                                                            if(decimal-5 >= 0){
+                                                            printf("V");
+                                                            decimal = decimal - 5;
+                                                            
+                                                            }else{
+                                                                if(decimal-4 >= 0){
+                                                                printf("IV");
+                                                                decimal = decimal - 4;
+                                                                    
+                                                                }else{
+                                                                    if(decimal-1 >= 0){
+                                                                    printf("I");
+                                                                    decimal = decimal - 1;
+                                                                    
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }while(decimal != 0);
             break;
         }
         case 11:{
