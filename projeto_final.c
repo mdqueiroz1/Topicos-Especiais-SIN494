@@ -61,21 +61,136 @@ int main(){
 //Switch criado para facilitar a escolha de cada parte do programa.
     
         case 1:{
-       
-            break;
+        	int num,i,cont=0;
+        	
+        	printf("\nDigite o numero desejado:");
+        	scanf("%d",&num);
+        	
+            for(i=2;i<=num/2;i++)
+        	{
+        	    if(num%i==0)
+        	    {
+        	    	cont++;
+        	    	break;
+			   	}
+		    }
+		   	if(cont==0)
+		    {
+		    	printf("\n%d e um numero primo.\n\n",num);
+	        }
+			else
+			{
+				printf("\n%d nao e um numero primo.\n\n",num);
+		    }
+	    break;
         }
 
         case 2:{
-            break;
+        	float calculo=0,base,h; //h==altura
+        	int esc;
+        	
+        	printf("Voce deseja calcular a area de qual figura?\n1-Quadrado\n2-Retangulo\n3-Triangulo\n");
+        	scanf("%d",&esc);
+        	
+        	if(esc==1)
+        	{
+        		printf("Digite a base do quadrado:");
+        		scanf("%f",&base);
+        		calculo= base * base;
+        		printf("\nArea do quadrado e: %0.2f\n",calculo);
+			}
+			else if(esc==2)
+			{
+				printf("Digite a base do retangulo:");
+				scanf("%f",&base);
+				printf("Digite a altura:");
+				scanf("%f",&h);
+				calculo= base * h;
+				printf("\nArea do retangulo: %0.2f\n",calculo);
+			}
+			else if(esc==3)
+			{
+				printf("Digite a base do triangulo:");
+				scanf("%f",&base);
+				printf("Digite a altura:");
+				scanf("%f",&h);
+				calculo= base * h / 2.0;
+				printf("\nArea do triangulo: %0.2f\n",calculo);
+			}
+			else
+			{
+				printf("\nNUMERO DIGITADO INVALIDO, TENTE NOVAMENTE\n");
+			}
+        break;
         }
         case 3:{
-            break;
+        	int num, i, a=0, b=1, c=1;
+        	printf("Digite a posicao desejada:");
+        	scanf("%d",&num);
+        	
+        	if(num==1)
+        	{
+        		printf("\nO %d esta na posicao %d da sequencida de fibonacci.\n",num,b);
+			}
+        	else if(num%2==0)
+        	{
+        		for(i=2; i!=num; i=i+2)
+        		{
+        			a=a+b;
+        			b=a+b+1;
+				}
+				printf("\nO %d esta na posicao %d da sequencida de fibonacci.\n",num,b);
+			}
+			else
+			{
+				for(i=2; i!=num; i++)
+				{
+					a=b+c;
+					b=c;
+					c=a;
+				}
+				printf("\nO %d esta na posicao %d da sequencida de fibonacci.\n",num,a);
+			}
+        break;
         }
         case 4:{
-
+        	int num,fat;
+        	
+        	printf("Digite um numero no qual deseja calcular seu fatorial:");
+        	scanf("%d",&num);
+        	
+        	if(num==1)
+        	{
+        		printf("\nO fatorial de 1 e 1.\n");
+			}
+			else if(num>1)
+			{
+				for(fat=1; num>1; num--)
+				{
+					fat=fat*num;
+				}
+				printf("\nO Fatorial do numero digitado e: %d\n",fat);
+			}
+			else
+			{
+				printf("\nNUMERO INVALIDO.\n");
+			}
+        break;
         }
         case 5:{
-            break;
+        	int x,y,pot=1,cont=0; //x=base e y=expoente
+        	printf("Digite a base(numero inteiro):");
+        	scanf("%d",&x);
+        	printf("Digite o expoente(numero inteiro e nao negativo):");
+        	scanf("%d",&y);
+        	
+        	while(cont != y)
+        	{
+        		pot=pot*x;
+        		cont++;
+			}
+			printf("\n%d elevado a %d e: %d.\n",x,y,pot);
+        break;
         }
         case 6:{
             break;
