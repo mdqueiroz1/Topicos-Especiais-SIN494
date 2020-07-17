@@ -271,7 +271,8 @@ int main(){
                                             
                                                 }else{
                                                     if(decimal-40 >= 0){
-                                                    printf("XL");                                                    decimal = decimal - 40;
+                                                    printf("XL");                                                    
+                                                    decimal = decimal - 40;
                                                 
                                                     }else{
                                                         if(decimal-10 >= 0){
@@ -322,6 +323,8 @@ int main(){
             return 0;
         }
     }
+
+    printf("1- Voltar ao menu principal\n2-")
     
     return 0;
 }
