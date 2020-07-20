@@ -40,7 +40,7 @@ int main(){
             printf("8- Calculadora simples\n");
             printf("9- Calcular a diferenca entre duas datas\n");
             printf("10- Converter numero para numero romano\n");
-            printf("11- insira uma ferramenta interessante aqui\n");
+            printf("11- Jokenpo!\n");
             printf("12- Sair do programa\n");
             printf("Informe a opcao desejada:\n");
             do{
@@ -130,7 +130,7 @@ int main(){
                 
                 if(num==1)
                 {
-                    printf("\nO %d esta na posicao %d da sequencida de fibonacci.\n",num,b);
+                    printf("\nA posicao %d  tem valor %d na sequencida de fibonacci.\n",num,b);
                 }
                 else if(num%2==0)
                 {
@@ -139,7 +139,7 @@ int main(){
                         a=a+b;
                         b=a+b+1;
                     }
-                    printf("\nO %d esta na posicao %d da sequencida de fibonacci.\n",num,b);
+                    printf("\nA posicao %d  tem valor %d na sequencida de fibonacci.\n",num,b);
                 }
                 else
                 {
@@ -149,7 +149,7 @@ int main(){
                         b=c;
                         c=a;
                     }
-                    printf("\nO %d esta na posicao %d da sequencida de fibonacci.\n",num,a);
+                    printf("\nA posicao %d  tem valor %d na sequencida de fibonacci.\n",num,a);
                 }
             break;
             }
@@ -445,6 +445,44 @@ int main(){
                 break;
             }
             case 11:{
+                int j1, j2, jogardnv;//j1=Jogador1, j2=jogador
+                do{
+                    printf("1- Pedra   2-Papel   3-Tesoura\n");
+                    printf("Digite a jogada do jogador 1:\n");
+                    do{
+                        scanf("%d", &j1);
+                    }while(j1 > 3 || j1 < 1);
+                    
+                    printf("Digite a jogada do jogador 2:\n");
+                    do{
+                        scanf("%d", &j2);
+                    }while(j2 > 3 || j2 < 1);
+                    
+                    if(j1>=1 && j1<=3 && j2>=1 && j2<=3)
+                    {
+                        if(j1!=j2)
+                        {
+                        if((j1 == 1 && j2 ==3)||(j1 == 2 && j2 == 1)||(j1 == 3 && j2 == 2))
+                        {
+                            printf("Jogador 1 venceu!\n");
+                            printf("Deseja jogar novamente?\n 1- Sim 2- Nao\n");
+                            scanf("%d", &jogardnv);
+                            system("cls");
+                        }else{
+                            printf("Jogador 2 venceu!\n");
+                            printf("Deseja jogar novamente?\n 1- Sim 2- Nao\n");
+                            scanf("%d", &jogardnv);
+                            system("cls");
+                        }
+
+                        }else{
+                            printf("Empate!\n");
+                            printf("Deseja jogar novamente?\n 1- Sim 2- Nao\n");
+                            scanf("%d", &jogardnv);
+                            system("cls");
+                        }
+                    }
+                }while(jogardnv == 1);
                 break;
             }
             case 12:{
